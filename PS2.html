@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	body{
+		background-color: black;
+	}
+/*style for the star*/
+	#star{
+		position:absolute;
+		top:340px;
+		left:640px;
+		width:80px;
+		height:80px;
+		background-color: orange;
+		border-radius: 50%;
+	}
+/*positioning the divisions accordingly*/
+	#div1{
+		position: absolute;
+		top:270px;
+		left:570px;
+		height:20px;
+		width:20px;
+	}
+	#div2{
+		position: absolute;
+		top:215px;
+		left:515px;
+		height:30px;
+		width:30px;
+	}
+	#div3{
+		position: absolute;
+		top:135px;
+		left:435px;
+		height:40px;
+		width:40px;
+	}
+/*style and animations for the planets*/
+	#plan1{
+		position:relative;
+		border-radius: 50%;
+		background-color: red;
+		height:20px;
+		width:20px;
+		-webkit-animation-name: planet1;
+		-webkit-animation-duration: 5s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+		transform-origin: 110px 110px 0px;
+	}
+	#plan2{
+		position:relative;
+		border-radius: 50%;
+		background-color: blue;
+		height:30px;
+		width:30px;
+		-webkit-animation-name: planet2;
+		-webkit-animation-duration: 7s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+		transform-origin: 165px 165px 0px;
+
+	}
+	#plan3{
+		position:relative;
+		border-radius: 50%;
+		background-color: brown;
+		height:40px;
+		width:40px;
+		-webkit-animation-name: planet3;
+		-webkit-animation-duration: 15s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-play-state: running;
+		transform-origin: 245px 245px 0px;
+	}
+/*keyframes for the rotation*/
+	@-webkit-keyframes planet1{
+		0%{
+			-webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+		}
+		25%{
+			-webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(90deg);
+		}
+		50%{
+			-webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(180deg);
+		}
+		75%{
+			-webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(270deg);
+		}
+		100%{
+			-webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(360deg);
+		}
+				
+	}
+	@-webkit-keyframes planet2{
+		0%{
+			-webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+		}
+		25%{
+			-webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(90deg);
+		}
+		50%{
+			-webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(180deg);
+		}
+		75%{
+			-webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(270deg);
+		}
+		100%{
+			-webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(360deg);
+		}
+				
+	}
+	@-webkit-keyframes planet3{
+		0%{
+			-webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+		}
+		25%{
+			-webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(90deg);
+		}
+		50%{
+			-webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(180deg);
+		}
+		75%{
+			-webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(270deg);
+		}
+		100%{
+			-webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(360deg);
+		}
+				
+	}
+/*basic styling for buttons*/
+#pause1{
+	position: absolute;
+	top:50px;
+	left:20px;	
+}
+#resume1{
+	position: absolute;
+	top:80px;
+	left:20px;
+}
+#restart1{
+	position: absolute;
+	top:110px;
+	left:20px;
+}
+
+#pause2{
+	position: absolute;
+	top:170px;
+	left:20px;	
+}
+#resume2{
+	position: absolute;
+	top:200px;
+	left:20px;
+}
+#restart2{
+	position: absolute;
+	top:230px;
+	left:20px;
+}
+#pause3{
+	position: absolute;
+	top:290px;
+	left:20px;	
+}
+#resume3{
+	position: absolute;
+	top:320px;
+	left:20px;
+}
+#restart3{
+	position: absolute;
+	top:350px;
+	left:20px;
+}
+
+	</style>
+</head>
+<body>
+
+<script type="text/javascript" src="jquery-2.2.0.min.js"></script>
+<script type="text/javascript">
+
+// defining functions to pause,resume and restart animations
+	function pause1(){
+		document.getElementById('plan1').style.webkitAnimationPlayState="paused";
+		console.log("paused1");
+	}
+	function resume1(){
+		document.getElementById('plan1').style.webkitAnimationPlayState="running";
+		console.log("resumed1");
+	}
+	function restart1(){
+		// momentarily removes the element and adds it back
+		var elm = document.getElementById('plan1');
+		var newelm = elm.cloneNode(true);
+		elm.parentNode.replaceChild(newelm, elm);
+		console.log("restarted1");
+	}
+	function pause2(){
+		document.getElementById('plan2').style.webkitAnimationPlayState="paused";
+		console.log("paused2");
+	}
+	function resume2(){
+		document.getElementById('plan2').style.webkitAnimationPlayState="running";
+		console.log("resumed2");
+	}
+	function restart2(){
+		var elm = document.getElementById('plan2');
+		var newelm = elm.cloneNode(true);
+		elm.parentNode.replaceChild(newelm, elm);
+		console.log("restarted2");
+	}
+	function pause3(){
+		document.getElementById('plan3').style.webkitAnimationPlayState="paused";
+		console.log("paused3");
+	}
+	function resume3(){
+		document.getElementById('plan3').style.webkitAnimationPlayState="running";
+		console.log("resumed3");
+	}
+	function restart3(){
+		var elm = document.getElementById('plan3');
+		var newelm = elm.cloneNode(true);
+		elm.parentNode.replaceChild(newelm, elm);
+		console.log("restarted3");
+	}
+</script>
+<!-- creating the star and planets -->
+<div id="star"></div>
+<div id="div1">
+	<div id="plan1"></div>
+</div>
+<div id="div2">
+	<div id="plan2"></div>
+</div>
+<div id="div3">
+	<div id="plan3"></div>
+</div>
+<!-- creating buttons and assigning functions on clicking them -->
+<button id="pause1" onclick="pause1()">Pause planet 1</button>
+<button id="resume1" onclick="resume1()">Resume planet 1</button>
+<button id="restart1" onclick="restart1()">Restart planet 1</button>
+<button id="pause2" onclick="pause2()">Pause planet 2</button>
+<button id="resume2" onclick="resume2()">Resume planet 2</button>
+<button id="restart2" onclick="restart2()">Restart planet 2</button>
+<button id="pause3" onclick="pause3()">Pause planet 3</button>
+<button id="resume3" onclick="resume3()">Resume planet 3</button>
+<button id="restart3" onclick="restart3()">Restart planet 3</button>
+</body>
+</html>
